@@ -1,6 +1,16 @@
 .button {
   all: unset;
+
   cursor: pointer;
+
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+
+  padding: 6px 24px;
+
+  border-radius: 4px;
 
   &.fullWidth {
     justify-content: center;
@@ -36,7 +46,10 @@
 
 .secondary {
   color: var(--color-light-100);
+
   background: var(--color-dark-500);
+  border: 2px;
+  border-radius: 4px;
   box-shadow: 0 4px 4px 0 rgb(77 86 96 / 13%);
 
   &:active {
@@ -61,9 +74,48 @@
 }
 
 .tertiary {
-  background-color: blue;
+  color: var(--color-accent-700);
+  border: 1px solid var(--color-accent-500);
+
+  &:active {
+    background: var(--color-dark-500);
+    border: 1px solid var(--color-accent-700);
+  }
+
+  &:hover {
+    background: var(--color-dark-500);
+    border: 1px solid var(--color-accent-700);
+  }
+
+  &:focus-visible {
+    background: transparent;
+    outline: 0.125rem solid var(--color-info-700);
+  }
+
+  &:disabled {
+    color: var(--color-accent-900);
+    border: 1px solid var(--color-accent-900);
+  }
 }
 
 .link {
-  background-color: yellow;
+  color: var(--color-accent-500);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--color-accent-300);
+  }
+
+  &:active {
+    color: var(--color-accent-700);
+  }
+
+  &:focus-visible {
+    color: var(--color-accent-500);
+    outline: 0.125rem solid var(--color-info-700);
+  }
+
+  &:disabled {
+    color: var(--color-accent-900);
+  }
 }
