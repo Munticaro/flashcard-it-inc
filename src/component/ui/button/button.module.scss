@@ -2,17 +2,62 @@
   all: unset;
   cursor: pointer;
 
-  &:focus-visible {
-    outline: 2px solid var(--color-info-500);
+  &.fullWidth {
+    justify-content: center;
+    width: 100%;
   }
 }
 
 .primary {
-  background-color: red;
+  color: var(--color-light-100);
+  background: var(--color-accent-500);
+  box-shadow: 0 4px 18px 0 rgb(140 97 255 / 35%);
+
+  &:active {
+    background: var(--color-accent-700);
+    box-shadow: 0 4px 18px 0 rgb(140 97 255 / 35%);
+  }
+
+  &:hover {
+    background: var(--color-accent-300);
+    box-shadow: 0 4px 18px 0 rgb(140 97 255 / 35%);
+  }
+
+  &:focus {
+    background: var(--color-accent-500);
+    box-shadow: 0 4px 18px 0 rgb(140 97 255 / 35%);
+  }
+
+  &:disabled {
+    background: var(--color-accent-900);
+    box-shadow: 0 4px 18px 0 rgb(140 97 255 / 35%);
+  }
 }
 
 .secondary {
-  background-color: green;
+  color: var(--color-light-100);
+  background: var(--color-dark-500);
+  box-shadow: 0 4px 4px 0 rgb(77 86 96 / 13%);
+
+  &:active {
+    background: var(--color-dark-500);
+    box-shadow: 0 4px 4px 0 rgb(77 86 96 / 13%);
+  }
+
+  &:hover {
+    background: var(--color-dark-100);
+    box-shadow: 0 2px 10px 0 rgb(109 109 109 / 25%);
+  }
+
+  &:focus {
+    background: var(--color-dark-300);
+    box-shadow: 0 2px 10px 0 rgb(109 109 109 / 25%);
+  }
+
+  &:disabled {
+    background: var(--color-dark-300);
+    box-shadow: 0 2px 10px 0 rgb(109 109 109 / 25%);
+  }
 }
 
 .tertiary {
@@ -21,8 +66,4 @@
 
 .link {
   background-color: yellow;
-}
-
-.fullWidth {
-  width: 100%;
 }

@@ -1,9 +1,9 @@
-import { Typography } from '@/component/ui/typography'
+import { Button } from '@/component/ui/button'
 
 export function App() {
   return (
     <div>
-      <Typography variant={'h1'}>Some text</Typography>
+      <Button variant={'primary'}>some text</Button>
     </div>
   )
 }
