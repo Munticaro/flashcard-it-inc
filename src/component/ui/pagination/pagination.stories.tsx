@@ -13,7 +13,13 @@ export const Default = () => {
 
   return (
     <div>
-      <Pagination currentPage={page} onPageChange={setPage} pageSize={5} totalCount={100} />
+      <Pagination
+        className={'Pagination'}
+        currentPage={page}
+        onPageChange={setPage}
+        pageSize={5}
+        totalCount={100}
+      />
     </div>
   )
 }

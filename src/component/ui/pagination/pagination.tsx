@@ -2,6 +2,8 @@ import { memo } from 'react'
 
 import { DOTS, usePagination } from '@/component/ui/pagination/hook/usePagination'
 
+import s from './pagination.module.scss'
+
 type PaginationProps = {
   currentPage: number
   onPageChange: (pageNumber: number) => void
@@ -33,26 +35,38 @@ export const Pagination = memo((props: PaginationProps) => {
   }
 
   return (
-    <div style={{ color: 'peru' }}>
-      <button disabled={currentPage === 1} onClick={onPrevious}>
-        {'<'}
+    <div className={s.paginationContainer}>
+      <button className={s.button} disabled={currentPage === 1} onClick={onPrevious}>
+        {'❮'}
       </button>
       {paginationRange.map((pageNumber, index) => {
         if (typeof pageNumber !== 'number') {
-          return <span key={index}>{DOTS}</span>
+          return (
+            <span className={s.dots} key={index}>
+              {DOTS}
+            </span>
+          )
+        }
+        const buttonClass = (pageNumber: number) => {
+          return pageNumber === currentPage ? s.active : ''
         }
 
         return (
-          <button key={index} onClick={() => onPageChange(pageNumber)}>
+          <button
+            className={`${s.button} ${buttonClass(pageNumber)}`}
+            key={index}
+            onClick={() => onPageChange(pageNumber)}
+          >
             {pageNumber}
           </button>
         )
       })}
       <button
+        className={s.button}
         disabled={currentPage === paginationRange[paginationRange.length - 1]}
         onClick={onNext}
       >
-        {'>'}
+        {'❯'}
       </button>
     </div>
   )
