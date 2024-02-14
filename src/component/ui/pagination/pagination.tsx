@@ -7,6 +7,7 @@ import s from './pagination.module.scss'
 type PaginationProps = {
   currentPage: number
   onPageChange: (pageNumber: number) => void
+  onPageSizeChange: (newPageSize: number) => void
   pageSize: number
   siblingCount?: number
   totalCount: number
