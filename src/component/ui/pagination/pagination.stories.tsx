@@ -14,9 +14,9 @@ export const Default = () => {
   return (
     <div>
       <Pagination
-        className={'Pagination'}
         currentPage={page}
         onPageChange={setPage}
+        onPageSizeChange={setPage}
         pageSize={5}
         totalCount={100}
       />

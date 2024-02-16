@@ -51,18 +51,20 @@
   @include typography(var(--font-size-xs), var(--line-height-s), var(--font-weight-bold));
 }
 
-.link1 {
-  @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-regular));
+.link1,
+.link1:visited {
+  @include typography(var(--font-weight-regular), var(--font-size-s), var(--line-height-m));
 
-  font-family: var(--font-family);
-  color: var(--info-500);
+  cursor: pointer;
+  color: var(--color-info-500);
   text-decoration: underline;
 }
 
-.link2 {
-  @include typography(var(--font-size-xs), var(--line-height-m), var(--font-weight-regular));
+.link2,
+.link2:visited {
+  @include typography(var(--font-weight-regular), var(--font-size-xs), var(--line-height-s));
 
-  font-family: var(--font-family);
-  color: var(--info-500);
+  cursor: pointer;
+  color: var(--color-info-500);
   text-decoration: underline;
 }
