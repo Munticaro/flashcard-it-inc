@@ -1,11 +1,9 @@
-import { Icon } from '@/components/ui/icon/Icon'
-import { Options } from '@/components/ui/radio-group'
-import { Typography } from '@/components/ui/typography'
+import { Icon } from '@/component/ui/icon/Icon'
+import { Typography } from '@/component/ui/typography'
 import * as RadixSelect from '@radix-ui/react-select'
 import { clsx } from 'clsx'
 
-import s from 'src/component/ui/select/select.module.scss'
-
+import s from './select.module.scss'
 export const Select = (props: PropsType) => {
   const { disabled, handleSelectChange, isPagination, label, options, selectedValue, value } = props
 
@@ -58,4 +56,9 @@ export type PropsType = {
   options: Options[]
   selectedValue?: string
   value?: string
+}
+
+type Options = {
+  label: string
+  value: string
 }
