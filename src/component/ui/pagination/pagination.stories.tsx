@@ -10,15 +10,16 @@ export default {
 
 export const Default = () => {
   const [page, setPage] = useState(1)
+  const [pageSize, setPageSize] = useState(10)
 
   return (
     <div>
       <Pagination
         currentPage={page}
-        onPageChange={setPage}
-        onPageSizeChange={setPage}
-        pageSize={5}
-        totalCount={100}
+        pageChange={setPage}
+        pageSize={pageSize}
+        pageSizeChange={setPageSize}
+        totalCount={200}
       />
     </div>
   )

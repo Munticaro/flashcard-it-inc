@@ -1,20 +1,22 @@
 import { memo } from 'react'
 
 import { DOTS, usePagination } from '@/component/ui/pagination/hook/usePagination'
+import { SelectPagination } from '@/component/ui/pagination/selectPagination/selectPagination'
 
 import s from './pagination.module.scss'
 
-type PaginationProps = {
+type Props = {
+  className?: string
   currentPage: number
-  onPageChange: (pageNumber: number) => void
-  onPageSizeChange: (newPageSize: number) => void
+  pageChange: (pageNumber: number) => void
   pageSize: number
+  pageSizeChange: (newPageSize: number) => void
   siblingCount?: number
   totalCount: number
 }
 
-export const Pagination = memo((props: PaginationProps) => {
-  const { currentPage, onPageChange, pageSize, siblingCount = 1, totalCount } = props
+export const Pagination = memo((props: Props) => {
+  const { currentPage, pageChange, pageSize, pageSizeChange, siblingCount = 1, totalCount } = props
 
   const paginationRange = usePagination({
     currentPage,
@@ -24,15 +26,20 @@ export const Pagination = memo((props: PaginationProps) => {
   })
 
   if (!paginationRange || currentPage === 0 || paginationRange.length < 2) {
-    return null
+    return (
+      <div className={s.paginationContainer}>
+        Показать
+        <SelectPagination pageSize={pageSize} pageSizeChange={pageSizeChange} /> на странице
+      </div>
+    )
   }
 
   const onPrevious = () => {
-    onPageChange(currentPage - 1)
+    pageChange(currentPage - 1)
   }
 
   const onNext = () => {
-    onPageChange(currentPage + 1)
+    pageChange(currentPage + 1)
   }
 
   return (
@@ -56,7 +63,7 @@ export const Pagination = memo((props: PaginationProps) => {
           <button
             className={`${s.button} ${buttonClass(pageNumber)}`}
             key={index}
-            onClick={() => onPageChange(pageNumber)}
+            onClick={() => pageChange(pageNumber)}
           >
             {pageNumber}
           </button>
@@ -69,6 +76,8 @@ export const Pagination = memo((props: PaginationProps) => {
       >
         {'❯'}
       </button>
+      Показать
+      <SelectPagination pageSize={pageSize} pageSizeChange={pageSizeChange} /> на странице
     </div>
   )
 })
