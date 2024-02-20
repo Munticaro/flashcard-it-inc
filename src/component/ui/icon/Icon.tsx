@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 import iconSprite from '@/assets/icons/icons-sprite.svg'
 
 export const Icon = (props: IconPropsType) => {
