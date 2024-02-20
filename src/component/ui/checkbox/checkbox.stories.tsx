@@ -1,5 +1,4 @@
-import { Checkbox } from '@/component/checkbox/checkbox'
-import { Pagination } from '@/component/ui/pagination'
+import { Checkbox } from '@/component/ui/checkbox/checkbox'
 import { Meta } from '@storybook/react'
 
 export default {
