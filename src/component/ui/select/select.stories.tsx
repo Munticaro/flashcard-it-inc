@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import { useState } from 'react'
 
-import { Select } from '@/components/ui/select/select'
+import { Select } from '@/component/ui/select/select'
 
 const meta = {
   component: Select,
