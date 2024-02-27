@@ -1,4 +1,4 @@
-import { Typography } from '@/components/ui/typography'
+import { Typography } from '@/component/ui/typography'
 import * as RadixRadioGroup from '@radix-ui/react-radio-group'
 
 import s from './radio-group.module.scss'
