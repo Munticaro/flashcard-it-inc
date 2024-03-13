@@ -1,1 +1,1 @@
-export * from 'src/component/ui/select/select'
+export { Select } from './select'
